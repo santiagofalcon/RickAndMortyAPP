@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class CharactersServiceApi: CharactServiceContract {
+public class CharactersServiceApi: CharactersServiceContract {
     func getCharactersResult(completion: @escaping (Result<[Charac], Error>) -> Void) {
         guard let url = URL(string: CallsConstants.characFirtCall) else { return }
         

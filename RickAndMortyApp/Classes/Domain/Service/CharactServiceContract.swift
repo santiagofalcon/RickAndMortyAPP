@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CharactServiceContract {
+protocol CharactersServiceContract {
     func getCharactersResult(completion: @escaping (Result<[Charac], Error>) -> Void)
 }
