@@ -99,12 +99,10 @@
 		0C0D31E12BD584CE0022685F /* RickAndMortyApp */ = {
 			isa = PBXGroup;
 			children = (
-				0C0D31E22BD584CE0022685F /* AppDelegate.swift */,
-				0C0D31E42BD584CE0022685F /* SceneDelegate.swift */,
+				0C0D32282BD58E2E0022685F /* Assets */,
+				0C0D32272BD58E120022685F /* Classes */,
 				0C0D31E62BD584CE0022685F /* ViewController.swift */,
 				0C0D31E82BD584CE0022685F /* Main.storyboard */,
-				0C0D31EB2BD584D10022685F /* Assets.xcassets */,
-				0C0D31ED2BD584D10022685F /* LaunchScreen.storyboard */,
 				0C0D31F02BD584D10022685F /* Info.plist */,
 			);
 			path = RickAndMortyApp;
@@ -125,6 +123,152 @@
 				0C0D32052BD584D10022685F /* RickAndMortyAppUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyAppUITests;
+			sourceTree = "<group>";
+		};
+		0C0D32272BD58E120022685F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D322F2BD58E840022685F /* Api */,
+				0C0D322E2BD58E7D0022685F /* Domain */,
+				0C0D322D2BD58E730022685F /* Screens */,
+				0C0D322C2BD58E6B0022685F /* Bases */,
+				0C0D322B2BD58E650022685F /* App */,
+				0C0D322A2BD58E560022685F /* Constants */,
+				0C0D32292BD58E3F0022685F /* Manager */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0C0D32282BD58E2E0022685F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D32392BD58F7C0022685F /* Interfaces */,
+				0C0D32382BD58F740022685F /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0C0D32292BD58E3F0022685F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0C0D322A2BD58E560022685F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0C0D322B2BD58E650022685F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D31E42BD584CE0022685F /* SceneDelegate.swift */,
+				0C0D31E22BD584CE0022685F /* AppDelegate.swift */,
+				0C0D32312BD58EA40022685F /* Coordinator */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0C0D322C2BD58E6B0022685F /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		0C0D322D2BD58E730022685F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D32322BD58EDF0022685F /* Characters */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0C0D322E2BD58E7D0022685F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D32352BD58F400022685F /* Service */,
+				0C0D32342BD58F350022685F /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0C0D322F2BD58E840022685F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D32372BD58F530022685F /* Service */,
+				0C0D32362BD58F4F0022685F /* Model */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		0C0D32312BD58EA40022685F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0C0D32322BD58EDF0022685F /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D32332BD58F0B0022685F /* CellCharacters */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		0C0D32332BD58F0B0022685F /* CellCharacters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellCharacters;
+			sourceTree = "<group>";
+		};
+		0C0D32342BD58F350022685F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C0D32352BD58F400022685F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0C0D32362BD58F4F0022685F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C0D32372BD58F530022685F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0C0D32382BD58F740022685F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D31EB2BD584D10022685F /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		0C0D32392BD58F7C0022685F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D31ED2BD584D10022685F /* LaunchScreen.storyboard */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
