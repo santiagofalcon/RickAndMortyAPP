@@ -9,14 +9,15 @@ import Foundation
 
 struct CharactersResponseApi: CharactersResponse, Codable {
     
-//    var info: Informat {castInformat}
+    var info: Informat {castInformat}
     var results: [Charac] {castResult}
     
-//    private let castInformat:
+    private let castInformat: InformatApi
     private let castResult: [CharactersApi]
     
     enum CodingKeys: String, CodingKey {
         
+        case info
         case results
     }
     
@@ -24,12 +25,14 @@ struct CharactersResponseApi: CharactersResponse, Codable {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
+        castInformat = try values.decode(InformatApi.self, forKey: .info)
         castResult = try values.decode([CharactersApi].self, forKey: .results)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
+        try container.encode(castInformat, forKey: .info)
         try container.encode(castResult, forKey: .results)
     }
 }

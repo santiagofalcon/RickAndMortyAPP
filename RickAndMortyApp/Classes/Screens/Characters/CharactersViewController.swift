@@ -28,12 +28,20 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
         tableViewCharacters.delegate = self
         
         tableViewCharacters.register(UINib(nibName: "CellCharacter", bundle: nil), forCellReuseIdentifier: "CellCharacter")
-        presenter?.getCharacters()
-        title = CallsConstants.characTitle
+        presenter?.viewDidLoadWasCalled()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter?.getCharactersCount() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let callApiAgain = presenter?.getCharactersCount() else { return }
+        if presenter?.checkNextCall() == true {
+            if indexPath.row == (callApiAgain - 5) {
+                presenter?.getCharacters()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

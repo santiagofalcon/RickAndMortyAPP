@@ -15,6 +15,7 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
     var url = CallsConstants.characFirtCall
     
     var storageManager: StorageManager
+    var next = true
     
     init(interactor: CharactersInteractorProtocol, storageManager: StorageManager = StorageManager.shared) {
         self.interactor = interactor
@@ -31,9 +32,14 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
                 self.storageManager.saveCharacter(character: self.characters)
                 self.view?.loadCharacters()
                 self.view?.loadingView(.hide)
+                if let nextUrl = characterRetrieved.info.next {
+                    self.url = nextUrl
+                } else {
+                    self.next = false
+                }
             case let .failure(error):
                 if let apiResults = self.storageManager.getCharacter() {
-//                    self.next = false
+                    self.next = false
                     self.characters = apiResults
                     self.view?.loadCharacters()
                     self.view?.showError(title: CallsConstants.errorTitleCheckConnection,
@@ -45,6 +51,10 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
             }
         }
     }
+    
+    func viewDidLoadWasCalled() {
+        getCharacters()
+    }
 
     func getCharactersCount() -> Int {
         return characters.count
@@ -54,4 +64,7 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
         return self.characters[index]
     }
     
+    func checkNextCall() -> Bool {
+        return next
+    }
 }

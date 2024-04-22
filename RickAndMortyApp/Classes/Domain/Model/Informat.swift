@@ -7,8 +7,7 @@
 
 import Foundation
 
-protocol Informat: Codable {
-    
+protocol Informat {
     var count: Int {get}
     var pages: Int {get}
     var next: String? {get}

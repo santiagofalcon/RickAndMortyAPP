@@ -23,9 +23,10 @@ protocol CharactersPresenterProtocol{
     var  view: CharactersViewProtocol? {get set}
     
     func getCharacters()
-    
+    func viewDidLoadWasCalled() 
     func getCharactersCount()-> Int
     func charactersAtIndex(index: Int) -> Charac
+    func checkNextCall() -> Bool
 }
 
 protocol CharactersInteractorProtocol {
