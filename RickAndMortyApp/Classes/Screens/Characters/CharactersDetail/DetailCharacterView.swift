@@ -92,6 +92,7 @@ struct DetailCharacterView: View {
             }
         }
         .padding()
+        .background(Color.teal)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             loadImage()
@@ -112,7 +113,6 @@ struct DetailCharacterView: View {
                     DispatchQueue.main.async {
                         self.uiImage = uiImage
 
-                        // Save the image in the cache
                         presenter.storageManager.saveCharacterImage(image: uiImage, characterId: presenter.character.id)
                     }
                 }
