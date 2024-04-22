@@ -23,7 +23,6 @@ class CustomCellCharacter: UITableViewCell {
     }
     
     func setupUI() {
-        // Cell style
         contentView.layer.cornerRadius = 10
         contentView.layer.borderWidth = 0.8
         contentView.layer.borderColor = UIColor.lightGray.cgColor
@@ -32,11 +31,9 @@ class CustomCellCharacter: UITableViewCell {
         contentView.layer.shadowRadius = 4.0
         contentView.clipsToBounds = true
 
-        // Photo style
         characterImage.layer.cornerRadius = characterImage.frame.size.width / 2.8
         characterImage.contentMode = .scaleAspectFill
 
-        // Name style
         characterName.font = UIFont.boldSystemFont(ofSize: 16)
         characterName.textColor = .black
     }

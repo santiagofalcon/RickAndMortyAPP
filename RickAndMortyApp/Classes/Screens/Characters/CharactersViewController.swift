@@ -60,6 +60,15 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let charactersAtIndex = presenter?.charactersAtIndex(index: indexPath.row) else {
+            showError(title: CallsConstants.errorTitle, message: CallsConstants.errorLoadingCharacter)
+            return
+        }
+
+        delegate?.goToDetailScreen(character: charactersAtIndex, sender: self)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchCharacter(with: searchText)
     }

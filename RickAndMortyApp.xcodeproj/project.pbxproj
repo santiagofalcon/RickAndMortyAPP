@@ -41,6 +41,10 @@
 		0C2D380E2BD689DE001DBA13 /* InformatApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D380D2BD689DE001DBA13 /* InformatApi.swift */; };
 		0C2D38112BD68B7E001DBA13 /* LocationOfCharacterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D38102BD68B7E001DBA13 /* LocationOfCharacterApi.swift */; };
 		0C2D38132BD68B8A001DBA13 /* OriginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D38122BD68B8A001DBA13 /* OriginApi.swift */; };
+		0C2D38192BD6A455001DBA13 /* DetailCharacterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D38182BD6A455001DBA13 /* DetailCharacterPresenter.swift */; };
+		0C2D381B2BD6A46B001DBA13 /* DetailCharacterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D381A2BD6A46B001DBA13 /* DetailCharacterInteractor.swift */; };
+		0C2D381D2BD6A47C001DBA13 /* DetailCharacterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D381C2BD6A47C001DBA13 /* DetailCharacterContract.swift */; };
+		0C2D381F2BD6A8B7001DBA13 /* DetailCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D381E2BD6A8B7001DBA13 /* DetailCharacterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		0C2D380D2BD689DE001DBA13 /* InformatApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformatApi.swift; sourceTree = "<group>"; };
 		0C2D38102BD68B7E001DBA13 /* LocationOfCharacterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOfCharacterApi.swift; sourceTree = "<group>"; };
 		0C2D38122BD68B8A001DBA13 /* OriginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginApi.swift; sourceTree = "<group>"; };
+		0C2D38182BD6A455001DBA13 /* DetailCharacterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterPresenter.swift; sourceTree = "<group>"; };
+		0C2D381A2BD6A46B001DBA13 /* DetailCharacterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterInteractor.swift; sourceTree = "<group>"; };
+		0C2D381C2BD6A47C001DBA13 /* DetailCharacterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterContract.swift; sourceTree = "<group>"; };
+		0C2D381E2BD6A8B7001DBA13 /* DetailCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +348,10 @@
 		0C0D324E2BD5A5820022685F /* CharactersDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D381E2BD6A8B7001DBA13 /* DetailCharacterView.swift */,
+				0C2D38182BD6A455001DBA13 /* DetailCharacterPresenter.swift */,
+				0C2D381A2BD6A46B001DBA13 /* DetailCharacterInteractor.swift */,
+				0C2D381C2BD6A47C001DBA13 /* DetailCharacterContract.swift */,
 			);
 			path = CharactersDetail;
 			sourceTree = "<group>";
@@ -515,11 +527,15 @@
 				0C0D323F2BD593350022685F /* CharactersServiceApi.swift in Sources */,
 				0C0D324B2BD59F0B0022685F /* Coordinator.swift in Sources */,
 				0C0D32412BD593730022685F /* Charac.swift in Sources */,
+				0C2D381D2BD6A47C001DBA13 /* DetailCharacterContract.swift in Sources */,
 				0C0D32602BD5A9260022685F /* CustomErrorProtocol.swift in Sources */,
 				0C0D32522BD5A5C70022685F /* CharactersCoordinator.swift in Sources */,
 				0C0D31E52BD584CE0022685F /* SceneDelegate.swift in Sources */,
 				0C0D325E2BD5A8FF0022685F /* BaseProtocol.swift in Sources */,
 				0C0D32472BD5944A0022685F /* Informat.swift in Sources */,
+				0C2D381B2BD6A46B001DBA13 /* DetailCharacterInteractor.swift in Sources */,
+				0C2D38192BD6A455001DBA13 /* DetailCharacterPresenter.swift in Sources */,
+				0C2D381F2BD6A8B7001DBA13 /* DetailCharacterView.swift in Sources */,
 				0C2D380A2BD6671E001DBA13 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
