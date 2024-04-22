@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-internal final class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+internal final class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var searchCharacterBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewCharacters: UITableView!
     
@@ -26,6 +27,7 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
         
         tableViewCharacters.dataSource = self
         tableViewCharacters.delegate = self
+        searchCharacterBar.delegate = self
         
         tableViewCharacters.register(UINib(nibName: "CellCharacter", bundle: nil), forCellReuseIdentifier: "CellCharacter")
         presenter?.viewDidLoadWasCalled()
@@ -49,10 +51,19 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
             return CustomCellCharacter()
         }
 
-        cell.characterName.text = presenter?.charactersAtIndex(index: indexPath.row).name
+        guard let characterAtIndex = presenter?.charactersAtIndex(index: indexPath.row) else { return cell }
+
+        cell.characterName.text = characterAtIndex.name
+
+        presenter?.downloadCharacterImage(characterAtIndex, cell)
 
         return cell
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.searchCharacter(with: searchText)
+    }
+
 }
 
 extension CharactersViewController: CharactersViewProtocol {

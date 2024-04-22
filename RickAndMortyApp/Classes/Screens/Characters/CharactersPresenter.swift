@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 internal final class CharactersPresenter: CharactersPresenterProtocol {
-    
+
     var view: CharactersViewProtocol?
     var interactor: CharactersInteractorProtocol
     var characters = [Charac]()
@@ -16,6 +17,9 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
     
     var storageManager: StorageManager
     var next = true
+    
+    var filterCharacter = false
+    var filteredCharacter = [Charac]()
     
     init(interactor: CharactersInteractorProtocol, storageManager: StorageManager = StorageManager.shared) {
         self.interactor = interactor
@@ -52,16 +56,54 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
         }
     }
     
+    func downloadCharacterImage(_ characterAtIndex: Charac, _ cell: CustomCellCharacter){
+        if let cachedImage = storageManager.getCharacterImage(characterId: characterAtIndex.id) {
+            cell.characterImage.image = cachedImage
+        } else {
+            if let imageUrlString = characterAtIndex.image, let imageUrl = URL(string: imageUrlString) {
+                let task = URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+                    if error == nil, let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.characterImage.image = image
+
+                            self.storageManager.saveCharacterImage(image: image, characterId: characterAtIndex.id)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            cell.characterImage.image = UIImage(systemName: "person.circle")?.withTintColor(.gray)
+                        }
+                        print("Error Downloading Image: \(error?.localizedDescription ?? "")")
+                        self.view?.loadingView(.hide)
+                    }
+                }
+                task.resume()
+            }
+        }
+    }
+    
+    func searchCharacter(with searchText: String) {
+        filterCharacter = !searchText.isEmpty
+
+        if filterCharacter {
+            filteredCharacter = characters.filter { character in
+                character.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+
+        view?.loadCharacters()
+    }
+
+    
     func viewDidLoadWasCalled() {
         getCharacters()
     }
 
     func getCharactersCount() -> Int {
-        return characters.count
+        return filterCharacter ? filteredCharacter.count : characters.count
     }
     
     func charactersAtIndex(index: Int) -> Charac {
-        return self.characters[index]
+        return filterCharacter ? filteredCharacter[index] : characters[index]
     }
     
     func checkNextCall() -> Bool {
