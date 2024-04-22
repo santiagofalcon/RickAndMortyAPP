@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersViewController" customModule="RickAndMortyApp" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicator" destination="J4Y-sm-ZsM" id="Pn9-do-hHT"/>
                 <outlet property="tableViewCharacters" destination="W56-JC-Njt" id="qfO-e3-eUd"/>
                 <outlet property="view" destination="gT0-xA-Xod" id="pIz-Dk-VCa"/>
             </connections>
@@ -23,14 +24,21 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="J4Y-sm-ZsM">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="IAC-re-13M"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="J4Y-sm-ZsM" firstAttribute="leading" secondItem="IAC-re-13M" secondAttribute="leading" id="4a1-CX-Bds"/>
                 <constraint firstItem="W56-JC-Njt" firstAttribute="trailing" secondItem="IAC-re-13M" secondAttribute="trailing" id="Cfv-sK-zcO"/>
                 <constraint firstItem="W56-JC-Njt" firstAttribute="leading" secondItem="IAC-re-13M" secondAttribute="leading" id="IZd-sm-jIJ"/>
+                <constraint firstItem="IAC-re-13M" firstAttribute="trailing" secondItem="J4Y-sm-ZsM" secondAttribute="trailing" id="KMi-7L-OTK"/>
+                <constraint firstItem="IAC-re-13M" firstAttribute="bottom" secondItem="J4Y-sm-ZsM" secondAttribute="bottom" id="j7b-3N-ZHE"/>
                 <constraint firstItem="IAC-re-13M" firstAttribute="bottom" secondItem="W56-JC-Njt" secondAttribute="bottom" id="sOu-dj-Ngh"/>
                 <constraint firstItem="W56-JC-Njt" firstAttribute="top" secondItem="IAC-re-13M" secondAttribute="top" id="tUc-BQ-wTW"/>
+                <constraint firstItem="J4Y-sm-ZsM" firstAttribute="top" secondItem="IAC-re-13M" secondAttribute="top" id="wLN-7h-nYg"/>
             </constraints>
             <point key="canvasLocation" x="209.92366412213741" y="55.633802816901408"/>
         </view>

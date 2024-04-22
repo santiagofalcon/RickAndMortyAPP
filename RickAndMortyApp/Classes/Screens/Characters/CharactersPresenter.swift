@@ -12,22 +12,40 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
     var interactor: CharactersInteractorProtocol
     var characters = [Charac]()
     
-    init(interactor: CharactersInteractorProtocol) {
+    var url = CallsConstants.characFirtCall
+    
+    var storageManager: StorageManager
+    
+    init(interactor: CharactersInteractorProtocol, storageManager: StorageManager = StorageManager.shared) {
         self.interactor = interactor
+        self.storageManager = storageManager
     }
     
     func getCharacters() {
-        interactor.getCharactersResult { result in
+        interactor.getCharactersResult(firstURL: url) { result in
             switch result {
-            case.failure(let error):
-                self.view?.showError?(message: error.localizedDescription)
-            case.success(let character):
-                self.characters.append(contentsOf: character)
+            case let .success(characterRetrieved):
+                self.view?.loadingView(.show)
+                let characterCall = characterRetrieved.results
+                self.characters.append(contentsOf: characterCall)
+                self.storageManager.saveCharacter(character: self.characters)
                 self.view?.loadCharacters()
+                self.view?.loadingView(.hide)
+            case let .failure(error):
+                if let apiResults = self.storageManager.getCharacter() {
+//                    self.next = false
+                    self.characters = apiResults
+                    self.view?.loadCharacters()
+                    self.view?.showError(title: CallsConstants.errorTitleCheckConnection,
+                                         message: error.localizedDescription)
+                } else {
+                    self.view?.showError(title: CallsConstants.errorGeneralNoConnection,
+                                         message: CallsConstants.errorMessageNoCache)
+                }
             }
         }
     }
-    
+
     func getCharactersCount() -> Int {
         return characters.count
     }

@@ -18,12 +18,10 @@ struct CustomError: CustomErrorProtocol {
     var code: Int
     
     var errorDescription: String?
-    
-    var failureReason: String?
-    
-    init(description: String, code: Int){
+        
+    init(title: String?, description: String, code: Int){
+        self.title = title
         self.code = code
         errorDescription = description
-        failureReason = description
     }
 }

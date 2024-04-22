@@ -10,6 +10,7 @@ import UIKit
 
 internal final class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewCharacters: UITableView!
     
     var presenter: CharactersPresenterProtocol?
@@ -47,9 +48,41 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
 }
 
 extension CharactersViewController: CharactersViewProtocol {
+    
     func loadCharacters() {
         DispatchQueue.main.async {
             self.tableViewCharacters.reloadData()
+        }
+    }
+    
+    func loadingView(_ state: LoadingState) {
+        switch state {
+        case .show:
+            showLoading()
+        case .hide:
+            hideLoading()
+        }
+    }
+
+    private func showLoading() {
+        DispatchQueue.main.async {
+            self.loadingIndicator.isHidden = false
+            self.loadingIndicator.startAnimating()
+        }
+    }
+
+    private func hideLoading() {
+        DispatchQueue.main.async {
+            self.loadingIndicator.stopAnimating()
+        }
+    }
+
+    func showError(title: String, message: String) {
+        DispatchQueue.main.async {
+            ShowAlert().showAlertView(title: title,
+                                      message: message,
+                                      button1Text: "OK",
+                                      parent: self)
         }
     }
     

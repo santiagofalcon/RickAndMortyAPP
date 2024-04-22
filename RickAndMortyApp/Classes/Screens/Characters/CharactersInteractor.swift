@@ -17,10 +17,10 @@ internal final class CharactersInteractor {
 
 extension CharactersInteractor: CharactersInteractorProtocol {
     
-    func getCharactersResult(completion: @escaping (Result<[Charac], Error>) -> Void) {
+    func getCharactersResult(firstURL: String, completion: @escaping (Result<CharactersResponse, Error>) -> Void){
         let charactersService = self.charactersService.getCharactersService()
         
-        charactersService.getCharactersResult { result in
+        charactersService.getCharactersResult(firstURL: firstURL) { result in
             completion(result)
         }
     }

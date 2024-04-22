@@ -35,6 +35,9 @@
 		0C0D32602BD5A9260022685F /* CustomErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D325F2BD5A9260022685F /* CustomErrorProtocol.swift */; };
 		0C0D32622BD5AC9C0022685F /* CustomCellCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D32612BD5AC9C0022685F /* CustomCellCharacter.swift */; };
 		0C0D32642BD5ACD10022685F /* CellCharacter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0D32632BD5ACD10022685F /* CellCharacter.xib */; };
+		0C2D38052BD66264001DBA13 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D38042BD66264001DBA13 /* ApiManager.swift */; };
+		0C2D380A2BD6671E001DBA13 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D38092BD6671E001DBA13 /* StorageManager.swift */; };
+		0C2D380C2BD675FE001DBA13 /* AlertCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D380B2BD675FE001DBA13 /* AlertCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		0C0D325F2BD5A9260022685F /* CustomErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorProtocol.swift; sourceTree = "<group>"; };
 		0C0D32612BD5AC9C0022685F /* CustomCellCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellCharacter.swift; sourceTree = "<group>"; };
 		0C0D32632BD5ACD10022685F /* CellCharacter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCharacter.xib; sourceTree = "<group>"; };
+		0C2D38042BD66264001DBA13 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		0C2D38092BD6671E001DBA13 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		0C2D380B2BD675FE001DBA13 /* AlertCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 		0C0D31E12BD584CE0022685F /* RickAndMortyApp */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D38032BD66241001DBA13 /* Manager */,
 				0C0D32282BD58E2E0022685F /* Assets */,
 				0C0D32272BD58E120022685F /* Classes */,
 				0C0D31F02BD584D10022685F /* Info.plist */,
@@ -206,6 +213,7 @@
 			children = (
 				0C0D325D2BD5A8FF0022685F /* BaseProtocol.swift */,
 				0C0D325F2BD5A9260022685F /* CustomErrorProtocol.swift */,
+				0C2D380B2BD675FE001DBA13 /* AlertCustom.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -326,6 +334,15 @@
 			children = (
 			);
 			path = CharactersDetail;
+			sourceTree = "<group>";
+		};
+		0C2D38032BD66241001DBA13 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D38042BD66264001DBA13 /* ApiManager.swift */,
+				0C2D38092BD6671E001DBA13 /* StorageManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +483,8 @@
 				0C0D32542BD5A64F0022685F /* CharactersContract.swift in Sources */,
 				0C0D324D2BD59F220022685F /* AppCoordinator.swift in Sources */,
 				0C0D32492BD596FF0022685F /* CallsConstants.swift in Sources */,
+				0C2D38052BD66264001DBA13 /* ApiManager.swift in Sources */,
+				0C2D380C2BD675FE001DBA13 /* AlertCustom.swift in Sources */,
 				0C0D32622BD5AC9C0022685F /* CustomCellCharacter.swift in Sources */,
 				0C0D32452BD593FA0022685F /* CharactersResponse.swift in Sources */,
 				0C0D32582BD5A6980022685F /* CharactersPresenter.swift in Sources */,
@@ -481,6 +500,7 @@
 				0C0D31E52BD584CE0022685F /* SceneDelegate.swift in Sources */,
 				0C0D325E2BD5A8FF0022685F /* BaseProtocol.swift in Sources */,
 				0C0D32472BD5944A0022685F /* Informat.swift in Sources */,
+				0C2D380A2BD6671E001DBA13 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

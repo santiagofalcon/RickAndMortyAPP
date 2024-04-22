@@ -18,5 +18,13 @@ struct CallsConstants {
     
     //Image
     static let imageCharacter = UIImage(systemName: "character")
+    
+    //Error 
+    static let errorTitle = "Error"
+    static let errorTitleCheckConnection = "Something is wrong, check your connection."
+    static let errorMessageUsingCache = "Using Cache."
+    static let errorMessageNoCache = "Sadly no cache stored. Nothing to show"
+    static let errorGeneralNoConnection = "Something is wrong with the internet. Check your connection"
+    static let errorLoadingCharacter = "Error loading selected Character"
 
 }

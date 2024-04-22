@@ -7,6 +7,6 @@
 
 import Foundation
 
-@objc protocol BaseProtocol {
-    @objc optional func showError(message: String)
+protocol BaseProtocol {
+    func showError(title: String, message: String)
 }

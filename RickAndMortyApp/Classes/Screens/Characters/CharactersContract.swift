@@ -10,7 +10,14 @@ import UIKit
 
 protocol CharactersViewProtocol: BaseProtocol {
     func loadCharacters()
+    func loadingView(_ state: LoadingState)
 }
+
+enum LoadingState {
+    case show
+    case hide
+}
+
 
 protocol CharactersPresenterProtocol{
     var  view: CharactersViewProtocol? {get set}
@@ -22,7 +29,7 @@ protocol CharactersPresenterProtocol{
 }
 
 protocol CharactersInteractorProtocol {
-    func getCharactersResult(completion: @escaping (Result<[Charac], Error>) -> Void)
+    func getCharactersResult(firstURL: String, completion: @escaping (Result<CharactersResponse, Error>) -> Void)
 }
 
 protocol CharactersServiceProtocol {

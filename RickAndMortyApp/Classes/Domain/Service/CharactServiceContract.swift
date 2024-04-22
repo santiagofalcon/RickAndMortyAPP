@@ -8,5 +8,4 @@
 import Foundation
 
 protocol CharactersServiceContract {
-    func getCharactersResult(completion: @escaping (Result<[Charac], Error>) -> Void)
-}
+    func getCharactersResult(firstURL: String, completion: @escaping (Result<CharactersResponse, Error>) -> Void)}
