@@ -60,6 +60,7 @@
 		0C4816C22BD6E2EE00AC66C9 /* CharactersInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4816C12BD6E2EE00AC66C9 /* CharactersInteractorMock.swift */; };
 		0C4816C42BD6E31500AC66C9 /* CharactersPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4816C32BD6E31500AC66C9 /* CharactersPresenterMock.swift */; };
 		0C4816C62BD6E32300AC66C9 /* ChaarctersViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4816C52BD6E32300AC66C9 /* ChaarctersViewControllerMock.swift */; };
+		668B08E02C1F43C9005FF207 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668B08DF2C1F43C9005FF207 /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		0C4816C12BD6E2EE00AC66C9 /* CharactersInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersInteractorMock.swift; sourceTree = "<group>"; };
 		0C4816C32BD6E31500AC66C9 /* CharactersPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenterMock.swift; sourceTree = "<group>"; };
 		0C4816C52BD6E32300AC66C9 /* ChaarctersViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaarctersViewControllerMock.swift; sourceTree = "<group>"; };
+		668B08DF2C1F43C9005FF207 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				0C0D32282BD58E2E0022685F /* Assets */,
 				0C0D32272BD58E120022685F /* Classes */,
 				0C0D31F02BD584D10022685F /* Info.plist */,
+				668B08DF2C1F43C9005FF207 /* README.txt */,
 			);
 			path = RickAndMortyApp;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				0C0D31EF2BD584D10022685F /* LaunchScreen.storyboard in Resources */,
 				0C0D31EC2BD584D10022685F /* Assets.xcassets in Resources */,
 				0C0D32642BD5ACD10022685F /* CellCharacter.xib in Resources */,
+				668B08E02C1F43C9005FF207 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
