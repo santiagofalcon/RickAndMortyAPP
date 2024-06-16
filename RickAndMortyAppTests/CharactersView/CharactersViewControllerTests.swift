@@ -75,6 +75,29 @@ final class CharactersViewControllerTests: XCTestCase {
         sut.tableView(tableView!, didSelectRowAt: TestConstants.indexPath)
         XCTAssertTrue(delegateMock.goToDeatailScreenCalled)
     }
+    
+    func testTrailingSwipeActionsConfiguration() {
+        _ = sut.view
+
+        let tableView = sut.tableViewCharacters!
+        
+        let swipeActionsConfiguration = sut.tableView(tableView, trailingSwipeActionsConfigurationForRowAt: TestConstants.indexPath)
+        XCTAssertNotNil(swipeActionsConfiguration)
+
+        let actions = swipeActionsConfiguration?.actions ?? []
+        XCTAssertEqual(actions.count, 1)
+        XCTAssertEqual(actions.first?.title, "Delete")
+
+        if let deleteAction = actions.first {
+            let completionHandler: (Bool) -> Void = { success in
+                XCTAssertTrue(success)
+            }
+            deleteAction.handler(deleteAction, UIView(), completionHandler)
+            
+            XCTAssertTrue(presenterMock.removeCharacterWasCalled)
+        }
+    }
+
 
     func testSearchBar() {
         _ = sut.view

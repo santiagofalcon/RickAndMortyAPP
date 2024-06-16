@@ -69,6 +69,16 @@ internal final class CharactersViewController: UIViewController, UITableViewDele
         delegate?.goToDetailScreen(character: charactersAtIndex, sender: self)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completionHandler) in
+            self?.presenter?.removeCharacter(at: indexPath.row)
+            completionHandler(true)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeActions
+    }
+
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchCharacter(with: searchText)
     }

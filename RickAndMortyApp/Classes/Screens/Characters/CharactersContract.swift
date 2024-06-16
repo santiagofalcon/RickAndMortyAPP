@@ -29,6 +29,7 @@ protocol CharactersPresenterProtocol{
     func checkNextCall() -> Bool
     func downloadCharacterImage(_ characterAtIndex: Charac, _ cell: CustomCellCharacter)
     func searchCharacter(with searchText: String)
+    func removeCharacter(at index: Int) 
 }
 
 protocol CharactersInteractorProtocol {

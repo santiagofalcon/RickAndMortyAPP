@@ -9,7 +9,6 @@ import Foundation
 @testable import RickAndMortyApp
 
 class CharactersPresenterMock: CharactersPresenterProtocol {
-    
     var character: [Charac] = []
     var view: CharactersViewProtocol?
 
@@ -20,6 +19,7 @@ class CharactersPresenterMock: CharactersPresenterProtocol {
     var downloadCharacterImageHomeWasCalled = false
     var funcGetCharacterCountWasCalled = false
     var funcFilterCharacterWasCalled = false
+    var removeCharacterWasCalled = false
 
     func viewDidLoadWasCalled() {
         funcViewDidLoadWasCalledCalled = true
@@ -53,5 +53,9 @@ class CharactersPresenterMock: CharactersPresenterProtocol {
     
     func searchCharacter(with searchText: String) {
         funcFilterCharacterWasCalled = true
+    }
+    
+    func removeCharacter(at index: Int) {
+        removeCharacterWasCalled = true
     }
 }

@@ -92,6 +92,18 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
 
         view?.loadCharacters()
     }
+    
+    func removeCharacter(at index: Int) {
+        let character = charactersAtIndex(index: index)
+        storageManager.removeCharacter(characterId: character.id)
+        if filterCharacter {
+            filteredCharacter.remove(at: index)
+        } else {
+            characters.remove(at: index)
+        }
+        view?.loadCharacters()
+    }
+
 
     
     func viewDidLoadWasCalled() {

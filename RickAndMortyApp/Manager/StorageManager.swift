@@ -87,7 +87,15 @@ struct StorageManager: StorageManagerProtocol {
             }
         }
     }
-
+    
+    func removeCharacter(characterId: Int) {
+        guard var characters = getCharacter() else { return }
+        
+        characters.removeAll { $0.id == characterId }
+        
+        saveCharacter(character: characters)
+    }
+    
     // MARK: Path Function
 
     func getCachesDirectory() -> URL {
