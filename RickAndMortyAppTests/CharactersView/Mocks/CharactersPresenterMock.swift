@@ -20,6 +20,7 @@ class CharactersPresenterMock: CharactersPresenterProtocol {
     var funcGetCharacterCountWasCalled = false
     var funcFilterCharacterWasCalled = false
     var removeCharacterWasCalled = false
+    var removedCharacterIndexWasCalled: Int?
 
     func viewDidLoadWasCalled() {
         funcViewDidLoadWasCalledCalled = true
@@ -57,5 +58,6 @@ class CharactersPresenterMock: CharactersPresenterProtocol {
     
     func removeCharacter(at index: Int) {
         removeCharacterWasCalled = true
+        removedCharacterIndexWasCalled = index
     }
 }

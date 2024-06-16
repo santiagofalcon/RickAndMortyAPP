@@ -80,8 +80,8 @@ final class CharactersViewControllerTests: XCTestCase {
         _ = sut.view
 
         let tableView = sut.tableViewCharacters!
-        
-        let swipeActionsConfiguration = sut.tableView(tableView, trailingSwipeActionsConfigurationForRowAt: TestConstants.indexPath)
+
+        let swipeActionsConfiguration = sut.tableView(tableView, trailingSwipeActionsConfigurationForRowAt: TestConstants.indexPath )
         XCTAssertNotNil(swipeActionsConfiguration)
 
         let actions = swipeActionsConfiguration?.actions ?? []
@@ -93,11 +93,11 @@ final class CharactersViewControllerTests: XCTestCase {
                 XCTAssertTrue(success)
             }
             deleteAction.handler(deleteAction, UIView(), completionHandler)
-            
+
             XCTAssertTrue(presenterMock.removeCharacterWasCalled)
+            XCTAssertEqual(presenterMock.removedCharacterIndexWasCalled, TestConstants.indexPath .row)
         }
     }
-
 
     func testSearchBar() {
         _ = sut.view

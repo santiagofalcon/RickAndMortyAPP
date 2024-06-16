@@ -52,7 +52,6 @@ class CharactersPresenterTests: XCTestCase {
     func testGetCharactersFailure() {
         _ = sut.view
         sut.getCharacters()
-        interactorMock.showError = true
         XCTAssertTrue(interactorMock.funcGetDataWasCalled)
     }
 
