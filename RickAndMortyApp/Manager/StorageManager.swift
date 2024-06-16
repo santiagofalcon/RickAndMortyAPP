@@ -89,14 +89,15 @@ struct StorageManager: StorageManagerProtocol {
     }
     
     func removeCharacter(characterId: Int) {
-        guard var characters = getCharacter() else { return }
-        
-        characters.removeAll { $0.id == characterId }
-        
-        saveCharacter(character: characters)
+        do {
+            var characters: [CharactersApi] = try getObject(filename: "peopleCache.json")
+            characters.removeAll { $0.id == characterId }
+            try saveObject(object: characters, filename: "peopleCache.json")
+        } catch let error {
+            print("Error removing character from cache: \(error.localizedDescription)")
+        }
     }
-    
-    // MARK: Path Function
+ // MARK: Path Function
 
     func getCachesDirectory() -> URL {
         let paths = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)

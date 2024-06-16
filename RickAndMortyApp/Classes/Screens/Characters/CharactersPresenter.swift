@@ -46,6 +46,7 @@ internal final class CharactersPresenter: CharactersPresenterProtocol {
                     self.next = false
                     self.characters = apiResults
                     self.view?.loadCharacters()
+                    self.view?.loadingView(.hide)
                     self.view?.showError(title: CallsConstants.errorTitleCheckConnection,
                                          message: error.localizedDescription)
                 } else {
